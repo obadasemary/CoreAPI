@@ -7,6 +7,7 @@ This repository contains the CoreAPI.
 CoreAPI's compact syntax and extensive feature set allow requests with powerful features like automatic retry to be written in just a few lines of code.
 
 ```swift
+import CoreAPI
 import NetworkLayer
 
 let networkService = URLSessionNetworkService()
