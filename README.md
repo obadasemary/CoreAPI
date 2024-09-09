@@ -30,6 +30,6 @@ Task {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/obadasemary/CoreAPI.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/obadasemary/CoreAPI.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```

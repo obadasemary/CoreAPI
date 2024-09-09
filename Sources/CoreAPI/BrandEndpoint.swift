@@ -29,7 +29,7 @@ extension BrandEndpoint: Endpoint {
                 URLQueryItem(name: "page", value: "\(page)"),
                 URLQueryItem(name: "per_page", value: "\(perPage)")
             ]
-            return components.url!.path + components.url!.query!
+            return components.url!.absoluteString
         case .getBrandDetails(brandId: let brandId):
             return "/store/v1/brands/\(brandId)/details"
         }
