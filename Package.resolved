@@ -1,0 +1,15 @@
+{
+  "originHash" : "feead786571b705d1c50381d62d453757a73013ab6f1f0b13344a2e5c2523244",
+  "pins" : [
+    {
+      "identity" : "networklayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/obadasemary/NetworkLayer.git",
+      "state" : {
+        "revision" : "9f1c6a03b332c324d813e34a59a1149c5dd301ed",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 3
+}
