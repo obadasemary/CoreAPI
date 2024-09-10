@@ -9,8 +9,8 @@ import Foundation
 import NetworkLayer
 
 public enum BrandEndpoint {
-    case getBrands(brandId: String, page: Int, perPage: Int)
-    case getBrandDetails(brandId: String)
+    case getBrandDetails(brandId: String, page: Int, perPage: Int)
+    case getProductDetails(brandId: String)
 }
  
 extension BrandEndpoint: Endpoint {
@@ -23,14 +23,14 @@ extension BrandEndpoint: Endpoint {
     // Path for each case
     public var path: String {
         switch self {
-        case .getBrands(let brandId, let page, let perPage):
+        case .getBrandDetails(let brandId, let page, let perPage):
             var components = URLComponents(string: "/store/v1/brands/\(brandId)")!
             components.queryItems = [
                 URLQueryItem(name: "page", value: "\(page)"),
                 URLQueryItem(name: "per_page", value: "\(perPage)")
             ]
             return components.url!.absoluteString
-        case .getBrandDetails(brandId: let brandId):
+        case .getProductDetails(brandId: let brandId):
             return "/store/v1/brands/\(brandId)/details"
         }
     }
@@ -38,7 +38,7 @@ extension BrandEndpoint: Endpoint {
     // HTTP method for each case
     public var method: HTTPMethod {
         switch self {
-        case .getBrands, .getBrandDetails:
+        case .getBrandDetails, .getProductDetails:
             return .get
         }
     }

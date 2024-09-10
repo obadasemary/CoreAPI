@@ -47,7 +47,7 @@ final class BrandDetailsEndpointTests: XCTestCase {
             return (response, expectedData)
         }
         
-        let endpoint = BrandEndpoint.getBrandDetails(brandId: "304266723")
+        let endpoint = BrandEndpoint.getProductDetails(brandId: "304266723")
         let response: BrandDetailsResponse = try await sut.request(
             endpoint: endpoint,
             responseModel: BrandDetailsResponse.self
