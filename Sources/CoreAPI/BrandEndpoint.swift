@@ -9,7 +9,7 @@ import Foundation
 import NetworkLayer
 
 public enum BrandEndpoint {
-    case getBrandDetails(brandId: String, page: Int, perPage: Int)
+    case getBrandDetails(brandId: String, page: Int, perPage: Int, cursor: String?)
     case getProductDetails(brandId: String)
 }
  
@@ -23,12 +23,20 @@ extension BrandEndpoint: Endpoint {
     // Path for each case
     public var path: String {
         switch self {
-        case .getBrandDetails(let brandId, let page, let perPage):
+        case .getBrandDetails(let brandId, let page, let perPage, let cursor):
             var components = URLComponents(string: "/store/v1/brands/\(brandId)")!
-            components.queryItems = [
+            var queryItems: [URLQueryItem] = [
                 URLQueryItem(name: "page", value: "\(page)"),
                 URLQueryItem(name: "per_page", value: "\(perPage)")
             ]
+            
+            if let cursor = cursor {
+                queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+            }
+            
+            components.queryItems = queryItems
+            
+            print("components.url!.absoluteString", components.url!.absoluteString)
             return components.url!.absoluteString
         case .getProductDetails(brandId: let brandId):
             return "/store/v1/brands/\(brandId)/details"
