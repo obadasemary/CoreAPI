@@ -16,7 +16,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/obadasemary/NetworkLayer.git", .upToNextMajor(from: "1.0.4"))
+        .package(path: "./NetworkLayer")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
