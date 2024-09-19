@@ -56,7 +56,7 @@ final class BrandEndpointTests: XCTestCase {
             return (response, expectedData)
         }
         
-        let endpoint = BrandEndpoint.getBrandDetails(brandId: "1724782240", page: 1, perPage: 5, cursor: "")
+        let endpoint = BrandEndpoint.getBrandDetails(brandId: "1724782240", page: 1, perPage: 5)
         let response: BrandResponse = try await sut.request(
             endpoint: endpoint,
             responseModel: BrandResponse.self
@@ -73,7 +73,7 @@ final class BrandEndpointTests: XCTestCase {
             return (response, expectedData)
         }
         
-        let endpoint = BrandEndpoint.getBrandDetails(brandId: "1724782240", page: 1, perPage: 5, cursor: "")
+        let endpoint = BrandEndpoint.getBrandDetails(brandId: "1724782240", page: 1, perPage: 5)
         let response: BrandResponse = try await sut.request(
             endpoint: endpoint,
             responseModel: BrandResponse.self
